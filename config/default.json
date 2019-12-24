@@ -1,6 +1,3 @@
 {
-    "mongoURI": "",
-    "jwtSecret": "secret",
-    "githubClientId": "",
-    "githubSecret": ""
-  }
+  "mongoURI": "mongodb+srv://lizharris90210:vwPQyNp9WweBA8Ve@socialconnect-uhmdu.mongodb.net/test?retryWrites=true&w=majority"
+}
