@@ -247,7 +247,6 @@ router.delete("/experience/:exp_id", auth, async (req, res) => {
     if (removeIndex === -1) {
       return res.status(500).json({ msg: "Server error" });
     } else {
-      // theses console logs helped me figure it out
       console.log("expIds", expIds);
       console.log("typeof expIds", typeof expIds);
       console.log("req.params", req.params);
