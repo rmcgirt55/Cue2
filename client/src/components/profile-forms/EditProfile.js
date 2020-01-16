@@ -16,7 +16,6 @@ const EditProfile = ({
     location: "",
     status: "",
     skills: "",
-    githubusername: "",
     bio: "",
     twitter: "",
     facebook: "",
@@ -36,8 +35,6 @@ const EditProfile = ({
       location: loading || !profile.location ? "" : profile.location,
       status: loading || !profile.status ? "" : profile.status,
       skills: loading || !profile.skills ? "" : profile.skills.join(","),
-      githubusername:
-        loading || !profile.githubusername ? "" : profile.githubusername,
       bio: loading || !profile.bio ? "" : profile.bio,
       twitter: loading || !profile.social ? "" : profile.social.twitter,
       facebook: loading || !profile.social ? "" : profile.social.facebook,
@@ -53,7 +50,6 @@ const EditProfile = ({
     location,
     status,
     skills,
-    githubusername,
     bio,
     twitter,
     facebook,
@@ -81,13 +77,13 @@ const EditProfile = ({
         <div className="form-group">
           <select name="status" value={status} onChange={e => onChange(e)}>
             <option>* Select Professional Status</option>
-            <option value="Developer">Developer</option>
-            <option value="Junior Developer">Junior Developer</option>
-            <option value="Senior Developer">Senior Developer</option>
-            <option value="Manager">Manager</option>
-            <option value="Student or Learning">Student or Learning</option>
-            <option value="Instructor">Instructor or Teacher</option>
-            <option value="Intern">Intern</option>
+            <option value="Developer">Full time musician</option>
+            <option value="Junior Developer">Part time musician</option>
+            <option value="Senior Developer">Hobby musician</option>
+            <option value="Manager">Venue/Event Employee</option>
+            <option value="Student or Learning">Sound tech</option>
+            <option value="Instructor">Lighting tech</option>
+            <option value="Intern">State hand</option>
             <option value="Other">Other</option>
           </select>
           <small className="form-text">
@@ -140,19 +136,6 @@ const EditProfile = ({
           />
           <small className="form-text">
             Please use comma separated values (eg. HTML,CSS,JavaScript,PHP)
-          </small>
-        </div>
-        <div className="form-group">
-          <input
-            type="text"
-            placeholder="Github Username"
-            name="githubusername"
-            value={githubusername}
-            onChange={e => onChange(e)}
-          />
-          <small className="form-text">
-            If you want your latest repos and a Github link, include your
-            username
           </small>
         </div>
         <div className="form-group">
