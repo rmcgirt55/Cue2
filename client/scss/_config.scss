@@ -1,0 +1,37 @@
+// CSS Reset
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+// Variables
+$primary-color: #272727;
+$accent-color: #6ea3db;
+$text-color: #fff;
+$font-weights: (
+    "regular": 400,
+    "medium": 500,
+    "bold": 700
+);
+
+$mobile: 800px;
+
+// Mix-Ins
+@mixin transition-ease {
+    transition: all 0.5s ease-in-out;
+}
+
+
+// Function Declaration
+@function set-text-color($color){
+    @if(lightness($color) > 40%){
+        @return #000;
+    } @else {
+        @return #fff;
+    }
+}
+
+@function weight($weight-name){
+    @return map-get($font-weights, $weight-name);
+}
