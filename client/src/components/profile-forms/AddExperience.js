@@ -6,7 +6,7 @@ import { addExperience } from "../../actions/profile";
 
 const AddExperience = ({ addExperience, history }) => {
   const [formData, setFormData] = useState({
-    company: "",
+    bandName: "",
     title: "",
     location: "",
     from: "",
@@ -17,7 +17,7 @@ const AddExperience = ({ addExperience, history }) => {
 
   const [toDateDisabled, toggleDisabled] = useState(false);
 
-  const { company, title, location, from, to, current, description } = formData;
+  const { bandName, title, location, from, to, current, description } = formData;
 
   const onChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -50,9 +50,9 @@ const AddExperience = ({ addExperience, history }) => {
         <div className="form-group">
           <input
             type="text"
-            placeholder="* Company"
-            name="company"
-            value={company}
+            placeholder="Band or Act Name"
+            name="bandName"
+            value={bandName}
             onChange={e => onChange(e)}
             required
           />
