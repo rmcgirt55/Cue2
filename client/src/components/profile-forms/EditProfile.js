@@ -11,11 +11,11 @@ const EditProfile = ({
   history
 }) => {
   const [formData, setFormData] = useState({
-    company: "",
+    bandName: "",
     website: "",
     location: "",
     status: "",
-    skills: "",
+    instruments: "",
     bio: "",
     twitter: "",
     facebook: "",
@@ -30,11 +30,12 @@ const EditProfile = ({
     getCurrentProfile();
 
     setFormData({
-      company: loading || !profile.company ? "" : profile.company,
+      bandName: loading || !profile.bandName ? "" : profile.bandName,
       website: loading || !profile.website ? "" : profile.website,
       location: loading || !profile.location ? "" : profile.location,
       status: loading || !profile.status ? "" : profile.status,
-      skills: loading || !profile.skills ? "" : profile.skills.join(","),
+      instruments:
+        loading || !profile.instruments ? "" : profile.instruments.join(","),
       bio: loading || !profile.bio ? "" : profile.bio,
       twitter: loading || !profile.social ? "" : profile.social.twitter,
       facebook: loading || !profile.social ? "" : profile.social.facebook,
@@ -45,11 +46,11 @@ const EditProfile = ({
   }, [loading, getCurrentProfile]);
 
   const {
-    company,
+    bandName,
     website,
     location,
     status,
-    skills,
+    instruments,
     bio,
     twitter,
     facebook,
@@ -93,14 +94,12 @@ const EditProfile = ({
         <div className="form-group">
           <input
             type="text"
-            placeholder="Company"
-            name="company"
-            value={company}
+            placeholder="Band or Act Name"
+            name="bandName"
+            value={bandName}
             onChange={e => onChange(e)}
           />
-          <small className="form-text">
-            Could be your own company or one you work for
-          </small>
+          <small className="form-text">Band or Act website</small>
         </div>
         <div className="form-group">
           <input
@@ -110,9 +109,7 @@ const EditProfile = ({
             value={website}
             onChange={e => onChange(e)}
           />
-          <small className="form-text">
-            Could be your own or a company website
-          </small>
+          <small className="form-text">Band or Act website</small>
         </div>
         <div className="form-group">
           <input
@@ -129,13 +126,14 @@ const EditProfile = ({
         <div className="form-group">
           <input
             type="text"
-            placeholder="* Skills"
-            name="skills"
-            value={skills}
+            placeholder="Instruments"
+            name="instruments"
+            value={instruments}
             onChange={e => onChange(e)}
           />
           <small className="form-text">
-            Please use comma separated values (eg. HTML,CSS,JavaScript,PHP)
+            Please use comma separated values (eg. Guitar, Harmonica,
+            Tambourine)
           </small>
         </div>
         <div className="form-group">

@@ -11,11 +11,11 @@ const CreateProfile = ({
   history
 }) => {
   const [formData, setFormData] = useState({
-    actName: "",
+    bandName: "",
     website: "",
     location: "",
     status: "",
-    skills: "",
+    instruments: "",
     bio: "",
     twitter: "",
     facebook: "",
@@ -25,11 +25,11 @@ const CreateProfile = ({
   });
   const [displaySocialInputs, toggleSocialInputs] = useState(false);
   const {
-    actName,
+    bandName,
     website,
     location,
     status,
-    skills,
+    instruments,
     bio,
     twitter,
     facebook,
@@ -61,18 +61,22 @@ const CreateProfile = ({
         <div className="form-group">
           <select name="status" value={status} onChange={e => onChange(e)}>
             <option value="0">* Select Professional Status</option>
-            <option value="Full-time-musician">Full-time musician/industry professional</option>
-            <option value="Part-time-musician">Part-time muscian/industry professional</option>
+            <option value="Full-time-musician">
+              Full-time musician/industry professional
+            </option>
+            <option value="Part-time-musician">
+              Part-time muscian/industry professional
+            </option>
             <option value="Hobby-musician">Hobby musician</option>
             <option value="Manager">Artist/Band Manager</option>
-            <option value="Backstage">Backstage (lighting, audio, stage support)</option>
+            <option value="Backstage">
+              Backstage (lighting, audio, stage support)
+            </option>
             <option value="Venue">Venue and event professional</option>
             <option value="Promotion">Promotion/marketing professional</option>
             <option value="Other">Other</option>
           </select>
-          <small className="form-text">
-            Background information
-          </small>
+          <small className="form-text">Background information</small>
         </div>
         <div className="form-group">
           <input
@@ -215,4 +219,3 @@ const mapStateToProps = state => ({
 export default connect(mapStateToProps, { createProfile, getCurrentProfile })(
   withRouter(CreateProfile)
 );
-
