@@ -1,11 +1,13 @@
 const express = require('express');
 const connectDB = require('./config/db');
 const path = require('path');
-
 const app = express();
 
 // Connect Database
 connectDB();
+
+//Setting Environment Variables
+require('dotenv').config()
 
 // Init Middleware
 app.use(express.json({ extended: false }));

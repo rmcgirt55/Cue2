@@ -12,12 +12,10 @@ const Landing = ({ isAuthenticated }) => {
     <section className='landing'>
       <div className='dark-overlay'>
         <div className='landing-inner'>
-
           <h1 className='x-large'>Cue2</h1>
           <p className='lead'>
             Create a musician profile and portfolio, share posts and connect to other
              musicians and industry professionals
-
           </p>
           <div className='buttons'>
             <Link to='/register' className='btn btn-primary'>
