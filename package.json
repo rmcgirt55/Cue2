@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lizharris90210/socialConnect.git"
+    "url": "git+https://github.com/lizharris90210/Cue2.git"
   },
   "keywords": [
     "social",
@@ -20,9 +20,9 @@
   "author": "Liz Harris",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lizharris90210/socialConnect/issues"
+    "url": "https://github.com/lizharris90210/Cue2/issues"
   },
-  "homepage": "https://github.com/lizharris90210/socialConnect#readme",
+  "homepage": "https://github.com/lizharris90210/Cue2#readme",
   "dependencies": {
     "axios": "^0.19.1",
     "bcryptjs": "^2.4.3",

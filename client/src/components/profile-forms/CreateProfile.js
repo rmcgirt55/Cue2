@@ -53,7 +53,7 @@ const CreateProfile = ({
     <Fragment>
       <h1 className="large text-primary">Create Your Profile</h1>
       <p className="lead">
-      <i class="fas fa-guitar"></i> Let's get some information to make your
+      <i className="fas fa-guitar"></i> Let's get some information to make your
         profile rock!
       </p>
       <small>* = required field</small>

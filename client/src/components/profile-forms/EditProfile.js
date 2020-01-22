@@ -71,7 +71,7 @@ const EditProfile = ({
     <Fragment>
       <h1 className="large text-primary">Edit Your Profile</h1>
       <p className="lead">
-      <i class="fas fa-guitar"></i>Add some changes to your profile
+      <i className="fas fa-guitar"></i>Add some changes to your profile
       </p>
       <small>* = required field</small>
       <form className="form" onSubmit={e => onSubmit(e)}>
