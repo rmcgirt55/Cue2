@@ -53,8 +53,8 @@ const CreateProfile = ({
     <Fragment>
       <h1 className="large text-primary">Create Your Profile</h1>
       <p className="lead">
-      <i className="fas fa-guitar"></i> Let's get some information to make your
-        profile rock!
+        <i className="fas fa-guitar"></i> Let's get some information to make
+        your profile rock!
       </p>
       <small>* = required field</small>
       <form className="form" onSubmit={e => onSubmit(e)}>
@@ -68,7 +68,7 @@ const CreateProfile = ({
               Part-time muscian/industry professional
             </option>
             <option value="Hobby-musician">Hobby musician</option>
-            <option value="Manager">Artist/Band Manager</option>
+            <option value="Manager">Artist or Band Manager</option>
             <option value="Backstage">
               Backstage (lighting, audio, stage support)
             </option>

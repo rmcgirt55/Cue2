@@ -40,9 +40,9 @@ router.post(
       check("status", "Status is required")
         .not()
         .isEmpty(),
-      check("instruments", "instruments is required")
-        .not()
-        .isEmpty()
+      // check("instruments", "instruments is required")
+      //   .not()
+      //   .isEmpty()
     ]
   ],
   async (req, res) => {
