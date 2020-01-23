@@ -1,0 +1,86 @@
+<<<<<<< HEAD
+=======
+// CSS Reset
+>>>>>>> 4c0809b40b53c550dd339f730e655d40a09503d2
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+<<<<<<< HEAD
+$navbar-background: purple;
+$primary-color: #17a2b8;
+$dark-color: #343a40;
+$light-color: #f4f4f4;
+$danger-color: #dc3545;
+$success-color: #28a745;
+$background-color: #FFFFFF;
+$border-bottom: #CCCCCC;
+$text-color: #333333;
+$fonts: "Raleway", sans-serif;
+=======
+
+// Variables
+$primary-color: #272727;
+$accent-color: #6ea3db;
+$text-color: #fff;
+>>>>>>> 4c0809b40b53c550dd339f730e655d40a09503d2
+$font-weights: (
+    "regular": 400,
+    "medium": 500,
+    "bold": 700
+);
+<<<<<<< HEAD
+$mobile: 800px;
+
+//MIXINS
+=======
+
+$mobile: 800px;
+
+// Mix-Ins
+>>>>>>> 4c0809b40b53c550dd339f730e655d40a09503d2
+@mixin transition-ease {
+    transition: all 0.5s ease-in-out;
+}
+
+<<<<<<< HEAD
+@mixin exp-edu{
+    & h2{
+        margin-bottom: 1rem;
+    }
+    & > div {
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: $border-bottom 1px dotted;
+        &:last-child{
+            border: 0;
+        }
+    }
+    & p{
+        margin: 0.5rem 0;
+    }
+}
+
+@mixin mobile{
+    @media (max-width: $mobile){
+        @import "./mobile";
+    }
+}
+
+//FUNCTIONS
+=======
+
+// Function Declaration
+>>>>>>> 4c0809b40b53c550dd339f730e655d40a09503d2
+@function set-text-color($color){
+    @if(lightness($color) > 40%){
+        @return #000;
+    } @else {
+        @return #fff;
+    }
+}
+
+@function weight($weight-name){
+    @return map-get($font-weights, $weight-name);
+}
