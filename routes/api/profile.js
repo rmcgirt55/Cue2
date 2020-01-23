@@ -16,7 +16,7 @@ router.get("/me", auth, async (req, res) => {
   try {
     const profile = await Profile.findOne({
       user: req.user.id
-    }).populate("user", ["name", "avatar"]);
+    }).populate("user", ["name"]);
 
     if (!profile) {
       return res.status(400).json({ msg: "There is no profile for this user" });
@@ -40,9 +40,9 @@ router.post(
       check("status", "Status is required")
         .not()
         .isEmpty(),
-      check("skills", "Skills is required")
-        .not()
-        .isEmpty()
+      // check("instruments", "instruments is required")
+      //   .not()
+      //   .isEmpty()
     ]
   ],
   async (req, res) => {
@@ -52,13 +52,12 @@ router.post(
     }
 
     const {
-      company,
+      bandName,
       website,
       location,
       bio,
       status,
-      githubusername,
-      skills,
+      instruments,
       youtube,
       facebook,
       twitter,
@@ -69,14 +68,15 @@ router.post(
     // Build profile object
     const profileFields = {};
     profileFields.user = req.user.id;
-    if (company) profileFields.company = company;
+    if (bandName) profileFields.bandName = bandName;
     if (website) profileFields.website = website;
     if (location) profileFields.location = location;
     if (bio) profileFields.bio = bio;
     if (status) profileFields.status = status;
-    if (githubusername) profileFields.githubusername = githubusername;
-    if (skills) {
-      profileFields.skills = skills.split(",").map(skill => skill.trim());
+    if (instruments) {
+      profileFields.instruments = instruments
+        .split(",")
+        .map(instruments => instruments.trim());
     }
 
     // Build social object
@@ -107,7 +107,7 @@ router.post(
 // @access   Public
 router.get("/", async (req, res) => {
   try {
-    const profiles = await Profile.find().populate("user", ["name", "avatar"]);
+    const profiles = await Profile.find().populate("user", ["name"]);
     res.json(profiles);
   } catch (err) {
     console.error(err.message);
@@ -122,7 +122,7 @@ router.get("/user/:user_id", async (req, res) => {
   try {
     const profile = await Profile.findOne({
       user: req.params.user_id
-    }).populate("user", ["name", "avatar"]);
+    }).populate("user", ["name"]);
 
     if (!profile) return res.status(400).json({ msg: "Profile not found" });
 
@@ -166,7 +166,7 @@ router.put(
       check("title", "Title is required")
         .not()
         .isEmpty(),
-      check("company", "Company is required")
+      check("bandName", "Band or Act Name is required")
         .not()
         .isEmpty(),
       check("from", "From date is required")
@@ -181,8 +181,9 @@ router.put(
     }
 
     const {
-      title,
-      company,
+      bandName,
+      genre,
+      instruments,
       location,
       from,
       to,
@@ -191,8 +192,9 @@ router.put(
     } = req.body;
 
     const newExp = {
-      title,
-      company,
+      bandName,
+      genre,
+      instruments,
       location,
       from,
       to,
@@ -370,37 +372,6 @@ router.delete("/education/:edu_id", auth, async (req, res) => {
   } catch (error) {
     console.error(error);
     return res.status(500).json({ msg: "Server error" });
-  }
-});
-// @route    GET api/profile/github/:username
-// @desc     Get user repos from Github
-// @access   Public
-router.get("/github/:username", (req, res) => {
-  try {
-    const options = {
-      uri: encodeURI(
-        `https://api.github.com/users/${
-          req.params.username
-        }/repos?per_page=5&sort=created:asc&client_id=${config.get(
-          "githubClientId"
-        )}&client_secret=${config.get("githubSecret")}`
-      ),
-      method: "GET",
-      headers: { "user-agent": "node.js" }
-    };
-
-    request(options, (error, response, body) => {
-      if (error) console.error(error);
-
-      if (response.statusCode !== 200) {
-        return res.status(404).json({ msg: "No Github profile found" });
-      }
-
-      res.json(JSON.parse(body));
-    });
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).send("Server Error");
   }
 });
 
