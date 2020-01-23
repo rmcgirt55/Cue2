@@ -15,7 +15,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
       </li>
       <li>
         <Link to="/dashboard">
-          <i className="fas fa-user" />{" "}
+        <i className="fas fa-guitar"></i>{" "}
           <span className="hide-sm">Dashboard</span>
         </Link>
       </li>
@@ -46,7 +46,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     <nav className="navbar">
       <h1>
         <Link to="/">
-          <i className="fas fa-code" /> Cue2
+        <i className="fas fa-guitar"></i> Cue2
         </Link>
       </h1>
       {!loading && (

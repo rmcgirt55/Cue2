@@ -5,7 +5,7 @@ const ProfileSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "user"
   },
-  company: {
+  bandName: {
     type: String
   },
   website: {
@@ -34,7 +34,7 @@ const ProfileSchema = new mongoose.Schema({
         type: String,
         required: true
       },
-      company: {
+      bandName: {
         type: String,
         required: true
       },
