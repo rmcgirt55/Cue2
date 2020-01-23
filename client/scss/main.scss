@@ -1,4 +1,5 @@
 @import "./config";
+<<<<<<< HEAD
 @import "./style";
 @import "./text";
 @import "./padding";
@@ -12,3 +13,13 @@
 @import "./form";
 @import "./overlay";
 @include mobile
+=======
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: Avenir
+}
+>>>>>>> 4c0809b40b53c550dd339f730e655d40a09503d2
