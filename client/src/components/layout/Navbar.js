@@ -1,28 +1,28 @@
-import React, { Fragment } from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
-import { logout } from "../../actions/auth";
+import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { logout } from '../../actions/auth';
 
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
     <ul>
       <li>
-        <Link to="/profiles">Musicians</Link>
+        <Link to='/profiles'>Musicians</Link>
       </li>
       <li>
-        <Link to="/posts">Posts</Link>
+        <Link to='/posts'>Posts</Link>
       </li>
       <li>
-        <Link to="/dashboard">
-        <i className="fas fa-guitar"></i>{" "}
-          <span className="hide-sm">Dashboard</span>
+        <Link to='/dashboard'>
+          <i className='fas fa-record-vinyl'></i>{' '}
+          <span className='hide-sm'>Dashboard</span>
         </Link>
       </li>
       <li>
-        <a onClick={logout} href="#!">
-          <i className="fas fa-sign-out-alt" />{" "}
-          <span className="hide-sm">Logout</span>
+        <a onClick={logout} href='#!'>
+          <i className='fas fa-sign-out-alt' />{' '}
+          <span className='hide-sm'>Logout</span>
         </a>
       </li>
     </ul>
@@ -31,22 +31,22 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const guestLinks = (
     <ul>
       <li>
-        <Link to="/profiles">Musicians</Link>
+        <Link to='/profiles'>MUSICIANS</Link>
       </li>
       <li>
-        <Link to="/register">Register</Link>
+        <Link to='/register'>+ REGISTER</Link>
       </li>
       <li>
-        <Link to="/login">Login</Link>
+        <Link to='/login'>+ LOGIN</Link>
       </li>
     </ul>
   );
 
   return (
-    <nav className="navbar">
+    <nav className='navbar'>
       <h1>
-        <Link to="/">
-        <i className="fas fa-guitar"></i> Cue2
+        <Link to='/'>
+          <i className='fas fa-record-vinyl'></i> Cue2
         </Link>
       </h1>
       {!loading && (
