@@ -1,25 +1,9 @@
-@import "./config";
-<<<<<<< HEAD
-@import "./style";
-@import "./text";
-@import "./padding";
-@import "./margin";
-@import "./navbar";
-@import "./landing";
-@import "./profile";
-@import "./button-badge-alert";
-@import "./post";
-@import "./table";
-@import "./form";
-@import "./overlay";
-@include mobile
-=======
+@import './config';
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
-body{
-    font-family: Avenir
+body {
+  font-family: Avenir;
 }
->>>>>>> 4c0809b40b53c550dd339f730e655d40a09503d2
