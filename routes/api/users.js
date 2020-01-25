@@ -32,48 +32,33 @@ router.post(
     const { name, email, password } = req.body;
 
     try {
-      let user = await User.findOne({ email });
+        User.findOne({email:email})
+            .then(
+                async (user)=>{
+                    if (user){
+                        return res.status(400).json({ errors: [{ msg: "User already exists" }] });
+                    } else{
+                        const avatar = gravatar.url(email, {s: "200", r: "pg", d: "mm"});
+                        user = new User({name, email, avatar, password});
 
-      if (user) {
-        return res
-          .status(400)
-          .json({ errors: [{ msg: "User already exists" }] });
-      }
+                        //Encrypting Password
+                        const salt = await bcrypt.genSalt(10);
+                        user.password = await bcrypt.hash(password, salt);
 
-      const avatar = gravatar.url(email, {
-        s: "200",
-        r: "pg",
-        d: "mm"
-      });
+                        //Saving users
+                        await user.save();
 
-      user = new User({
-        name,
-        email,
-        avatar,
-        password
-      });
-
-      const salt = await bcrypt.genSalt(10);
-
-      user.password = await bcrypt.hash(password, salt);
-
-      await user.save();
-
-      const payload = {
-        user: {
-          id: user.id
-        }
-      };
-
-      jwt.sign(
-        payload,
-        config.get("jwtSecret"),
-        { expiresIn: 360000 },
-        (err, token) => {
-          if (err) throw err;
-          res.json({ token });
-        }
-      );
+                        //Returning JSON Web Token
+                        const payload = {user: {id: user.id}};
+                        const options = {expiresIn: 360000};
+                        jwt.sign(payload, process.env.jwtSecret, options, (err, token) => {
+                                if (err) throw err;
+                                return res.json({ token });
+                            }
+                        );
+                    }
+                }
+            );
     } catch (err) {
       console.error(err.message);
       res.status(500).send("Server error");
