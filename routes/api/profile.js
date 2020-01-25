@@ -39,7 +39,7 @@ router.post(
     [
       check("status", "Status is required")
         .not()
-        .isEmpty(),
+        .isEmpty()
       // check("instruments", "instruments is required")
       //   .not()
       //   .isEmpty()
@@ -67,7 +67,7 @@ router.post(
 
     // Build profile object
     const profileFields = {};
-    profileFields.user = req.user.id;
+    (profileFields.user = req.user.id, req.user.name);
     if (bandName) profileFields.bandName = bandName;
     if (website) profileFields.website = website;
     if (location) profileFields.location = location;
