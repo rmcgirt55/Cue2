@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const gravatar = require("gravatar");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const config = require("config");
@@ -50,7 +49,7 @@ router.post(
 
                         //Returning JSON Web Token
                         const payload = {user: {id: user.id}};
-                        const options = {expiresIn: 360000};
+                        const options = {expiresIn: 3600};
                         jwt.sign(payload, process.env.jwtSecret, options, (err, token) => {
                                 if (err) throw err;
                                 return res.json({ token });

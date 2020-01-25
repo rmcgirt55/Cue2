@@ -1,0 +1,44 @@
+// CSS Reset
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// variables
+$navbar-background: white;
+$accent-color: #6ea3db;
+$primary-color: #17a2b8;
+$dark-color: #343a40;
+$light-color: #f4f4f4;
+$danger-color: #dc3545;
+$success-color: #28a745;
+$background-color: #ffffff;
+$border-bottom: #cccccc;
+$text-color: #333333;
+$fonts: 'Raleway', sans-serif;
+$font-weights: (
+  'regular': 400,
+  'medium': 500,
+  'bold': 700
+);
+
+$mobile: 800px;
+
+// Mix-Ins
+@mixin transition-ease {
+  transition: all 0.5s ease-in-out;
+}
+
+// Function Declaration
+@function set-text-color($color) {
+  @if (lightness($color) > 40%) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
+
+@function weight($weight-name) {
+  @return map-get($font-weights, $weight-name);
+}

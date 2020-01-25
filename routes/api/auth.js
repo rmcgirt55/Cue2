@@ -45,7 +45,7 @@ router.post(
                 bcrypt.compare(password, user.password).then((exists)=>{
                   if(exists){
                       const payload = {user: {id: user.id}};
-                      const options = {expiresIn: 360000};
+                      const options = {expiresIn: 3600};
                       jwt.sign(payload, process.env.jwtSecret, options, (err, token) => {
                           if (err) throw err;
                           return res.json({ token });
