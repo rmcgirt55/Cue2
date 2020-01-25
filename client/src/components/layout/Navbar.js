@@ -31,7 +31,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const guestLinks = (
     <ul>
       <li>
-        <Link to='/profiles'>MUSICIANS</Link>
+        <Link to='/profiles'>+ MUSICIANS</Link>
       </li>
       <li>
         <Link to='/register'>+ REGISTER</Link>
@@ -46,7 +46,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     <nav className='navbar'>
       <h1>
         <Link to='/'>
-          <i className='fas fa-record-vinyl'></i> Cue2
+          <i className='fas fa-record-vinyl'></i>
         </Link>
       </h1>
       {!loading && (
