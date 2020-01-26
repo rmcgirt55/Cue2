@@ -16,10 +16,10 @@ const Landing = ({ isAuthenticated }) => {
             Create a profile and connect with fellow musicians
           </p>
           <div className='buttons'>
-            <Link to='/register' className='btn btn-primary'>
+            <Link to='/register' className='btn btn-primary-home'>
               REGISTER
             </Link>
-            <Link to='/login' className='btn btn-light'>
+            <Link to='/login' className='btn btn-light-home'>
               LOGIN
             </Link>
           </div>

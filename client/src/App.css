@@ -30,6 +30,10 @@ h1 {
   color: #17a2b8;
 }
 
+h2 {
+  color: #17a2b8;
+}
+
 ul {
   list-style: none;
 }
@@ -68,11 +72,6 @@ img {
   position: absolute;
   bottom: 200px;
   left: 70px;
-  font-family: flegrei, sans-serif;
-
-  font-weight: 400;
-
-  font-style: normal;
 }
 
 .lead {
@@ -174,7 +173,7 @@ img {
   color: #333;
 }
 
-.btn-primary {
+.btn-primary-home {
   background: black;
   color: #fff;
   position: absolute;
@@ -183,7 +182,7 @@ img {
   display: block;
 }
 
-.btn-light {
+.btn-light-home {
   background: black;
   color: #fff;
   position: absolute;
