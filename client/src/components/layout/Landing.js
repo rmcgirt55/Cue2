@@ -12,7 +12,9 @@ const Landing = ({ isAuthenticated }) => {
     <section className='landing'>
       <div className='dark-overlay'>
         <div className='landing-inner'>
-          <p className='lead'>Connect Unite Engage</p>
+          <p className='lead-landing'>
+            Create a profile and connect with fellow musicians
+          </p>
           <div className='buttons'>
             <Link to='/register' className='btn btn-primary'>
               REGISTER
