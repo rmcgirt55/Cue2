@@ -191,6 +191,11 @@ img {
   display: block;
 }
 
+.btn-primary {
+  background: #17a2b8;
+  text-decoration: white;
+}
+
 .bg-primary,
 .badge-primary,
 .alert-primary {
