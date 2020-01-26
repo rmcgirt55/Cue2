@@ -58,6 +58,7 @@ img {
 }
 
 .lead {
+  color: black;
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
@@ -156,7 +157,24 @@ img {
   color: #333;
 }
 
-.btn-primary,
+.btn-primary {
+  background: black;
+  color: #fff;
+  position: absolute;
+  bottom: 8px;
+  left: 20px;
+  display: block;
+}
+
+.btn-light {
+  background: black;
+  color: #fff;
+  position: absolute;
+  bottom: 8px;
+  left: 200px;
+  display: block;
+}
+
 .bg-primary,
 .badge-primary,
 .alert-primary {
@@ -164,7 +182,6 @@ img {
   color: #fff;
 }
 
-.btn-light,
 .bg-light,
 .badge-light,
 .alert-light {
