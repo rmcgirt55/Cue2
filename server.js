@@ -5,6 +5,9 @@ const app = express();
 // Connect Database
 connectDB();
 
+//Setting Environment Variables
+require('dotenv').config()
+
 // Init Middleware
 app.use(express.json({ extended: false }));
 

@@ -111,7 +111,7 @@ router.delete("/:id", auth, async (req, res) => {
 router.put("/like/:id", auth, async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
-
+    console.log(post);
     // Check if the post has already been liked
     if (
       post.likes.filter(like => like.user.toString() === req.user.id).length > 0
@@ -155,6 +155,49 @@ router.put("/unlike/:id", auth, async (req, res) => {
     await post.save();
 
     res.json(post.likes);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server Error");
+  }
+});
+
+// @route    PUT api/posts/:id
+// @desc     Update a post
+// @access   Private
+router.put("/:id", auth, async (req, res) => {
+  try {
+    let params = req.body;
+   
+    Post.findByIdAndUpdate({ _id: req.params.id }, params, { new: true }, (error, postUpdated) => {
+      if (error) return res.status(500).send({ status: 500, message: `Server Error -> ${error}` });
+      if (!postUpdated) return res.status(400).send({ status: 404, message: `Server Error. Can't update post` });
+      return res.status(200).send({ post: postUpdated });
+    });
+
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server Error");
+  }
+});
+
+// @route    PUT api/posts/comment/:id
+// @desc     Update a comment of a post
+// @access   Private
+router.put("/comment/:id", auth, async (req, res) => {
+  try {
+    let params = req.body;
+   
+    
+    var post = await Post.findById(req.params.id);
+    Post.findById(req.params.id)
+    .then(async function(post) {
+      const comment = post.comments.id(params.commentId); // returns a matching subdocument
+      comment.set(params);      
+
+      await post.save();
+      return comment;
+    })
+    res.json(post);
   } catch (err) {
     console.error(err.message);
     res.status(500).send("Server Error");
