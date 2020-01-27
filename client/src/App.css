@@ -14,9 +14,6 @@
 }
 
 body {
-  font-family: 'Raleway', sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
   background-color: #fff;
   color: #333;
 }
@@ -24,6 +21,17 @@ body {
 a {
   color: var(--primary-color);
   text-decoration: none;
+}
+
+h1 {
+  font-family: aw-conqueror-inline, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #17a2b8;
+}
+
+h2 {
+  color: #17a2b8;
 }
 
 ul {
@@ -55,6 +63,15 @@ img {
   font-size: 3rem;
   line-height: 1.2;
   margin-bottom: 1rem;
+}
+
+.lead-landing {
+  color: black;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  position: absolute;
+  bottom: 200px;
+  left: 70px;
 }
 
 .lead {
@@ -156,7 +173,29 @@ img {
   color: #333;
 }
 
-.btn-primary,
+.btn-primary-home {
+  background: black;
+  color: #fff;
+  position: absolute;
+  bottom: 30px;
+  left: 50px;
+  display: block;
+}
+
+.btn-light-home {
+  background: black;
+  color: #fff;
+  position: absolute;
+  bottom: 30px;
+  left: 200px;
+  display: block;
+}
+
+.btn-primary {
+  background: #17a2b8;
+  text-decoration: white;
+}
+
 .bg-primary,
 .badge-primary,
 .alert-primary {
@@ -164,7 +203,6 @@ img {
   color: #fff;
 }
 
-.btn-light,
 .bg-light,
 .badge-light,
 .alert-light {
@@ -214,6 +252,10 @@ img {
   border: #ccc solid 1px;
 }
 
+.btn-primary-profile {
+  background-color: #17a2b8;
+}
+
 .round-img {
   border-radius: 50%;
 }
@@ -232,7 +274,7 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('./img/background.jpg') no-repeat center center/cover;
+  background: url('./img/backgroundimg.jpg') no-repeat center center/cover;
 }
 
 /* Forms */
@@ -309,7 +351,6 @@ button {
   z-index: 1;
   width: 100%;
   top: 0;
-  border-bottom: solid 1px var(--primary-color);
   opacity: 0.9;
 }
 
