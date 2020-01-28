@@ -1,6 +1,7 @@
+const gradient = require("gradient-string")
 const mongoose = require("mongoose");
-const config = require("./default.json");
-const db = config.mongoURI;
+// const config = require("./default.json");
+const db = process.env.mongoURI;
 
 const connectDB = async () => {
   try {
@@ -11,7 +12,7 @@ const connectDB = async () => {
       useUnifiedTopology: true
     });
 
-    console.log("MongoDB Connected...");
+    console.log(gradient.summer(`Connected to MongoDB`));
   } catch (err) {
     console.error(err.message);
     // Exit process with failure

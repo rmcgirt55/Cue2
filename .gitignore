@@ -107,3 +107,6 @@ dist
 
 # SASS FILES
 .css.map
+
+# Misc
+.DS_Store

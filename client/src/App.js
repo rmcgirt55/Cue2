@@ -1,6 +1,10 @@
 import React, { Fragment, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Navbar from "./components/layout/Navbar";
+
+// These files have different variations of the same component in them.  I have it set up this way so I can comment out one or the other to test and compare between the two of them
+// import Navbar from "./components/layout/Navbar";
+import Navbar from "./components/layout/Nav";
+
 import Landing from "./components/layout/Landing";
 import Routes from "./components/routing/Routes";
 
@@ -10,7 +14,9 @@ import store from "./store";
 import { loadUser } from "./actions/auth";
 import setAuthToken from "./utils/setAuthToken";
 
-import "./App.css";
+// CSS Elements
+import "./css/App.css";
+import "./css/responsive.css";
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -25,10 +31,10 @@ const App = () => {
     <Provider store={store}>
       <Router>
         <Fragment>
-          <Navbar />
+          <Navbar /> {/*How to conditionally render it?*/}
           <Switch>
             <Route exact path="/" component={Landing} />
-            <Route component={Routes} />
+            <Route component={Navbar, Routes} />
           </Switch>
         </Fragment>
       </Router>

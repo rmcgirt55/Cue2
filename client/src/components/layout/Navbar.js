@@ -31,13 +31,13 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const guestLinks = (
     <ul>
       <li>
-        <Link to='/profiles'>+ MUSICIANS</Link>
+        <Link to='/profiles'>MUSICIANS</Link>
       </li>
       <li>
-        <Link to='/register'>+ REGISTER</Link>
+        <Link to='/register'>REGISTER</Link>
       </li>
       <li>
-        <Link to='/login'>+ LOGIN</Link>
+        <Link to='/login'>LOGIN</Link>
       </li>
     </ul>
   );

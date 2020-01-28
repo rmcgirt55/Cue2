@@ -12,6 +12,9 @@ const Landing = ({ isAuthenticated }) => {
     <section className='landing'>
       <div className='dark-overlay'>
         <div className='landing-inner'>
+          <div className="mobile-logo">
+            <img src="/img/logo.png" className="mobile-img" alt="Logo"/>
+          </div>
           <p className='lead-landing'>
             Create a profile and connect with fellow musicians
           </p>
